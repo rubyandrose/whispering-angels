@@ -10,6 +10,7 @@ brew 'nodenv'
 brew 'postgresql@9.6'
 brew 'rbenv'
 brew 'ruby-build'
+brew 'imagemagick'
 
 cask 'chromedriver'
 cask 'phantomjs'
