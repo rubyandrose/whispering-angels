@@ -16,4 +16,5 @@ subtask_exec "Cleaning up tmp log" rm "$LOGFILE"
 
 task_inform "Checking setup..."
 
-echo "Your app is set up. Navigate to http://localhost:3000 in your browser to see a local running copy."
+echo "Your app is almost set up."
+echo "Run `rails db:setup` and then run `rails server` and navigate to http://localhost:3000 in your browser to see a local running copy."
