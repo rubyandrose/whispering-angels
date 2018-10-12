@@ -17,12 +17,12 @@ setup_rbenv() {
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 
-  if [ ! -d "$HOME/.rbenv/versions/2.3.1" ]; then
-    subtask_exec "Install ruby 2.3.1" rbenv install 2.3.1
+  if [ ! -d "$HOME/.rbenv/versions/2.4.2" ]; then
+    subtask_exec "Install ruby 2.4.2" rbenv install 2.4.2
   fi
 
   if [ ! -f "$HOME/.rbenv/version" ]; then
-    subtask_exec "Setting global ruby version to 2.3.1" rbenv global 2.3.1
+    subtask_exec "Setting global ruby version to 2.4.2" rbenv global 2.4.2
   fi
 }
 
