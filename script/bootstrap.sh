@@ -26,6 +26,11 @@ setup_rbenv() {
   fi
 }
 
+install_from_brewfile() {
+  task_inform "Installing services from Homebrew"
+  subtask_exec "Brew bundle" brew bundle
+}
+
 setup_postgresql() {
   task_inform "Setting up PostgreSQL"
   export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH" # This is necessary b/c the postgresql binaries aren't yet in the user's $PATH
