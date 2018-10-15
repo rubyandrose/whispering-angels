@@ -92,6 +92,7 @@ cd "$(dirname "$0")/.." || exit
 source script/helpers.sh
 
 install_homebrew && \
+install_from_brewfile && \
 setup_rbenv && \
 restart_services && \
 setup_openssl && \
