@@ -1,7 +1,8 @@
-# ${Wine Style}
+# Whispering Angels
 
 the social network for wine enthusiasts.
 
-${Quip about the wine style.}
+the photogenic favorite fawned over by millennials even more than avocado toast
 
-[Pour yourself a glass](https://ruby-rose-${wine-style}.herokuapp.com/)
+
+[Pour yourself a glass](https://ruby-rose-whispering-angels.herokuapp.com/)
