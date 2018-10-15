@@ -31,42 +31,6 @@ install_from_brewfile() {
   subtask_exec "Brew bundle" brew bundle
 }
 
-setup_postgresql() {
-  task_inform "Setting up PostgreSQL"
-  export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH" # This is necessary b/c the postgresql binaries aren't yet in the user's $PATH
-
-  while ! (pg_isready -q)
-  do
-    subtask_inform "Waiting for PostgreSQL to start up..."
-    sleep 5
-    ((seconds_waited+=5))
-
-    if ((seconds_waited >= 60)); then
-      subtask_warn "Waited for more than 60 seconds, moving on. PostgreSQL may not have started up correctly. Please investigate and try again."
-      return
-    fi
-  done
-
-  if ! (psql "$(whoami)" --command="SELECT version();" >/dev/null 2>&1); then
-    subtask_exec "Creating PSQL database $(whoami)" psql postgres -c "\"create database $(whoami);\""
-  fi
-}
-
-restart_services() {
-  task_inform "Starting services"
-  subtask_exec "Restarting PostgreSQL" brew services restart 'postgresql@9.6'
-  subtask_exec "Restarting openssl-osx-ca" brew services restart openssl-osx-ca
-}
-
-setup_openssl() {
-  task_inform "Setting up OpenSSL"
-  if [ ! -f "$HOME/.openssl/betterment.cer" ]; then
-    mkdir -p "$HOME/.openssl"
-    subtask_exec "Setting up openssl certificate" cp resources/openssl/betterment.cer "$HOME/.openssl/betterment.cer"
-  fi
-  subtask_exec "Copy trusted certificates to openssl certificate file" openssl-osx-ca
-}
-
 install_homebrew() {
   # Install homebrew if we don't have it already
   if ! command -v brew > /dev/null 2>&1; then
@@ -95,8 +59,6 @@ install_homebrew && \
 install_from_brewfile && \
 setup_rbenv && \
 restart_services && \
-setup_openssl && \
-setup_postgresql && \
 
 task_inform "Bootstrapping Dependencies..."
 
