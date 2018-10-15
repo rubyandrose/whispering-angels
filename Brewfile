@@ -1,13 +1,3 @@
-tap 'Betterment/betterbrew'
-brew 'Betterment/betterbrew/mysql'
-brew 'Betterment/betterbrew/openssl-osx-ca'
-
-brew 'gnu-sed'
-brew 'jenv'
-brew 'nginx'
-brew 'node-build'
-brew 'nodenv'
-brew 'postgresql@9.6'
 brew 'rbenv'
 brew 'ruby-build'
 brew 'imagemagick'
