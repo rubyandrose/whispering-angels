@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
 
   root to: "hello#index"
-  get 'about', action: :show, controller: 'abouts'
+  resource :about, only:[ :show, :edit, :update]
 end

@@ -1,0 +1,11 @@
+<%= simple_form_for(@user, url: about_url) do |f| %>
+
+	<%= f.input :about_me, label: "About Me" %>
+
+	<%= f.input :favorite_movie, label: "My Favorite Movie" %>
+
+	<%= f.input :favorite_wine, label: "My Favorite Wine" %>
+
+	<%= f.submit "Save" %>
+
+<% end %>
