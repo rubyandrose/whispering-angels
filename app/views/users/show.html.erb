@@ -3,9 +3,12 @@
 <%= image_tag 'bolt.png', height: "120" %>
 
 <br></br>
+
 <h2>
 	<%= @user.full_name %>
 </h2>
-<%= image_tag current_user.picture_url %>
+<%= image_tag @user.picture_url %>
 
-
+<p>
+<%= link_to "Link to Profile", user_url(@user) %>
+</p>
