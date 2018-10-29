@@ -1,5 +1,5 @@
 <% if signed_in? %>
-<%= link_to "About", "about" %>
+<%= link_to "About", about_path %>
 <%= link_to "Sign out", destroy_user_session_path %>
-<%= link_to "Posts", "posts" %>
+<%= link_to "Posts", posts_path %>
 <% end %>
