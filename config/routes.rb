@@ -8,6 +8,5 @@ Rails.application.routes.draw do
   end
   root to: "hello#index"
   resource :about, only:[ :show, :edit, :update]
-  get 'profile', action: :show, controller: 'profiles'
   resources :users 
 end
