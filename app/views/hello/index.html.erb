@@ -4,7 +4,11 @@
 
 <br></br>
 
-<%= image_tag current_user.picture_url %>
+<img src="<%= current_user.picture_url %>"
+onmouseover="this.setAttribute('src', '<%= Giphy.random(current_user.first_name).image_url %>')"
+onmouseout="this.setAttribute('src', '<%= current_user.picture_url %>')"
+width=150
+/>
 
 <h2>
 	<%= @user.full_name %>
