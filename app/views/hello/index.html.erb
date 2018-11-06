@@ -1,6 +1,6 @@
-<h1>Hello, Winos!</h1>
-
-<%= image_tag 'bolt.png', height: "120" %>
+<div class="content">
+  <div class="post">
+    <h1>Hello, Winos!</h1>
 
 <br></br>
 
@@ -13,3 +13,8 @@ width=150
 <h2>
 	<%= @user.full_name %>
 </h2>
+</div>
+<% @posts.each do |post| %>
+	<%= render "posts/post", post: post %>
+<% end %>
+</div>

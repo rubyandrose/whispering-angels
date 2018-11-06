@@ -1,7 +1,7 @@
 @import url(//fonts.googleapis.com/css?family=Gloria+Hallelujah);
 
 body {
-  font-family: 'Helvetica';
+  font-family: 'Roboto';
   background-color: #19db9a;
   color: white;
   font-size: 14px;
@@ -16,3 +16,36 @@ a {
   border: 5px solid black;
   padding: 10px; 
 }
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  a {
+    padding: 10px;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  flex-direction: column;
+  justify-content: space-between;
+  img {
+    text-align: center;
+    padding: 0 30%;
+    width: 50%;
+  }
+}
+
+.post {
+    display:block;
+    flow: left;
+    p {
+      font-size: 22px;
+      color: purple;
+    }
+  }

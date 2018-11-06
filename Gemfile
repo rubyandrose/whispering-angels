@@ -15,6 +15,8 @@ gem 'paperclip'
 gem 'puma'
 gem 'simple_form'
 gem 'giphy'
+gem 'ckeditor'
+gem 'zodiac'
 
 group :development, :test do
   gem 'sqlite3'
