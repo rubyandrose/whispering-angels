@@ -17,5 +17,12 @@
     
   <h3> <%= @user.favorite_wine %></h3>
 
-  <%= link_to "Edit your profile", edit_about_path %>
+
+
+<% @posts.each do |post| %> 
+  <p><%= post.title %></p>
+  <p><%= post.show_post_safe_html %></p>
+
+<% end %>
+<%= link_to "Edit your profile", edit_about_path %>
 </div>
