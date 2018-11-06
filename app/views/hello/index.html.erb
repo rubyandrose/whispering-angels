@@ -11,9 +11,6 @@
     </h2>
   </div>
   <% @posts.each do |post| %>
-        <div class="post">
-          <h2><%= post.title %></h2>
-          <p><%= post.body %></p>
-        </div>
-      <% end %>
+    <%= render "posts/post", post: post %>
+  <% end %>
 </div>
