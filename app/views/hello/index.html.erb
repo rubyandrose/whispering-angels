@@ -1,11 +1,19 @@
-<h1>Hello, Winos!</h1>
+<div class="content">
+  <div class="post">
+    <h1>Hello, Winos!</h1>
+  
+  <br></br>
 
-<%= image_tag 'bolt.png', height: "120" %>
+    <%= image_tag current_user.picture_url %>
 
-<br></br>
-
-<%= image_tag current_user.picture_url %>
-
-<h2>
-	<%= @user.full_name %>
-</h2>
+    <h2>
+      <%= @user.full_name %>
+    </h2>
+  </div>
+  <% @posts.each do |post| %>
+        <div class="post">
+          <h2><%= post.title %></h2>
+          <p><%= post.body %></p>
+        </div>
+      <% end %>
+</div>
