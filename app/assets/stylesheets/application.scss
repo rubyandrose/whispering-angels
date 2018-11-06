@@ -44,6 +44,9 @@ a {
 .post {
     display:block;
     flow: left;
+    magin: 10px 0;
+    padding: 5px;
+    border: 1px dotted purple;
     p {
       font-size: 22px;
       color: purple;
