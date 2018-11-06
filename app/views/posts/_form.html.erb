@@ -1,12 +1,14 @@
-<%= simple_form_for(@post) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :body %>
-  </div>
+<% javascript_include_tag Ckeditor.cdn_url %>
 
+<%= simple_form_for(@post) do |form| %>
+  <%= form.input :title %>
+  <br>
+  <%= form.cktext_area :body, class: 'someclass', ckeditor: { language: 'en'} %>
   <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= form.button :submit %>
+  <br>
 <% end %>
+
+
+
