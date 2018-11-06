@@ -1,5 +1,14 @@
-<% if signed_in? %>
-<%= link_to "About", about_path %>
-<%= link_to "Sign out", destroy_user_session_path %>
-<%= link_to "Posts", posts_path %>
-<% end %>
+<div class="nav">
+  <div class="left-nav">
+    <% if signed_in? %>
+      <%= link_to "Your Profile", about_path %>
+      <%= link_to "Posts", posts_path %>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to image_tag('bolt.png', height: "40"), root_path %>
+  </div>
+  <div class="right-nav">
+    <%= link_to "Sign out", destroy_user_session_path %>
+  </div>
+</div>
